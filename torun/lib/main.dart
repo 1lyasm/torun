@@ -143,28 +143,34 @@ class signupPageState extends State {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:<Widget> [
-            TextField(
-                onChanged: (value) {
-                  setState(() {
-                    name_signup = value;
-                  });
-                },
-                decoration: const InputDecoration(
-                  labelText: 'isim',
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Flexible(
+                child: TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      name_signup = value;
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    labelText: 'isim',
+                  ),
                 ),
               ),
-              const SizedBox(height: 20.0),
-              TextField(
-                onChanged: (value) {
-                  setState(() {
-                    surname_signup = value;
-                  });
-                },
-                decoration: const InputDecoration(
-                  labelText: 'soyisim',
+              const SizedBox(width: 50.0),
+              Flexible(
+                child: TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      surname_signup = value;
+                    });
+                  },
+                  decoration: const InputDecoration(
+                    labelText: 'soyisim',
+                  ),
                 ),
               ),
+            ]),
             const SizedBox(height: 20.0),
             TextField(
               onChanged: (value) {
@@ -180,7 +186,7 @@ class signupPageState extends State {
             TextField(
               onChanged: (value) {
                 setState(() {
-                   mail_signup= value;
+                  mail_signup = value;
                 });
               },
               decoration: const InputDecoration(
@@ -199,10 +205,19 @@ class signupPageState extends State {
               ),
             ),
             const SizedBox(height: 20.0),
-            const ElevatedButton(
-              onPressed: null,
-              child: Text('devam et'),
-            ),
+            const Row(children: [
+              SizedBox(width: 50.0),
+              Expanded(
+                child: SizedBox(
+                  height: 70,
+                  child: ElevatedButton(
+                    onPressed: null,
+                    child: Text('devam et'),
+                  ),
+                ),
+              ),
+              SizedBox(width: 50.0),
+            ]),
           ],
         ),
       ),
