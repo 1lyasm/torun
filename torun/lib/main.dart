@@ -1,6 +1,8 @@
-// ignore_for_file: camel_case_types, unnecessary_breaks, library_private_types_in_public_api, use_build_context_synchronously, dead_code
+// ignore_for_file: camel_case_types, unnecessary_breaks, library_private_types_in_public_api, use_build_context_synchronously, dead_code, non_constant_identifier_names
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 String username = '';
 String password = '';
@@ -8,6 +10,7 @@ String name_signup = '';
 String surname_signup = '';
 String number_signup = '';
 String password_signup = '';
+String mail_signup = '';
 void main() {
   runApp(
     const MaterialApp(
@@ -140,33 +143,33 @@ class signupPageState extends State {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children:<Widget> [
             TextField(
-              onChanged: (value) {
-                setState(() {
-                  username = value;
-                });
-              },
-              decoration: const InputDecoration(
-                labelText: 'isim',
+                onChanged: (value) {
+                  setState(() {
+                    name_signup = value;
+                  });
+                },
+                decoration: const InputDecoration(
+                  labelText: 'isim',
+                ),
               ),
-            ),
+              const SizedBox(height: 20.0),
+              TextField(
+                onChanged: (value) {
+                  setState(() {
+                    surname_signup = value;
+                  });
+                },
+                decoration: const InputDecoration(
+                  labelText: 'soyisim',
+                ),
+              ),
             const SizedBox(height: 20.0),
             TextField(
               onChanged: (value) {
                 setState(() {
-                  username = value;
-                });
-              },
-              decoration: const InputDecoration(
-                labelText: 'soyisim',
-              ),
-            ),
-            const SizedBox(height: 20.0),
-            TextField(
-              onChanged: (value) {
-                setState(() {
-                  username = value;
+                  number_signup = value;
                 });
               },
               decoration: const InputDecoration(
@@ -177,7 +180,7 @@ class signupPageState extends State {
             TextField(
               onChanged: (value) {
                 setState(() {
-                  username = value;
+                   mail_signup= value;
                 });
               },
               decoration: const InputDecoration(
@@ -188,7 +191,7 @@ class signupPageState extends State {
             TextField(
               onChanged: (value) {
                 setState(() {
-                  username = value;
+                  password_signup = value;
                 });
               },
               decoration: const InputDecoration(
@@ -196,9 +199,9 @@ class signupPageState extends State {
               ),
             ),
             const SizedBox(height: 20.0),
-            ElevatedButton(
+            const ElevatedButton(
               onPressed: null,
-              child: const Text('devam et'),
+              child: Text('devam et'),
             ),
           ],
         ),
