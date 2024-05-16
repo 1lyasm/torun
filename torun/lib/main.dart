@@ -211,21 +211,6 @@ class signupPageState extends State {
               ),
             ),
             const SizedBox(height: 20.0),
-<<<<<<< HEAD
-            const Row(children: [
-              SizedBox(width: 50.0),
-              Expanded(
-                child: SizedBox(
-                  height: 70,
-                  child: ElevatedButton(
-                    onPressed: null,
-                    child: Text('devam et'),
-                  ),
-                ),
-              ),
-              SizedBox(width: 50.0),
-            ]),
-=======
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context, 
@@ -233,7 +218,6 @@ class signupPageState extends State {
               },
               child: Text('devam et'),
             ),
->>>>>>> 29eb32c4e7d6c193c50f4facea5b895f741e6782
           ],
         ),
       ),
