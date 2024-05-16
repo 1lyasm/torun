@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 
 String username = '';
 String password = '';
+String name_signup = '';
+String surname_signup = '';
+String number_signup = '';
+String password_signup = '';
 void main() {
   runApp(
-     const MaterialApp(
-      home: loginPage(),
+    const MaterialApp(
+      home: signupPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -21,13 +25,14 @@ class loginPage extends StatefulWidget {
 }
 
 class loginPageState extends State {
-   bool passwordVisible=false; 
-      
-   @override 
-    void initState(){ 
-      super.initState(); 
-      passwordVisible=true; 
-    } 
+  bool passwordVisible = false;
+
+  @override
+  void initState() {
+    super.initState();
+    passwordVisible = true;
+  }
+
   // Fonksiyon: Kullanıcıyı giriş yapmaya yönlendirir
   void _login() {
     if (username == '25297638553' && password == 'queue38') {
@@ -86,26 +91,114 @@ class loginPageState extends State {
               },
               obscuringCharacter: '●',
               obscureText: passwordVisible,
-              decoration:  InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Şifre',
-                 suffixIcon: IconButton( 
-                      icon: Icon(passwordVisible 
-                          ? Icons.visibility 
-                          : Icons.visibility_off), 
-                      onPressed: () { 
-                        setState( 
-                          () { 
-                            passwordVisible = !passwordVisible; 
-                          }, 
-                        ); 
-                      }, 
-                    ),
+                suffixIcon: IconButton(
+                  icon: Icon(passwordVisible
+                      ? Icons.visibility
+                      : Icons.visibility_off),
+                  onPressed: () {
+                    setState(
+                      () {
+                        passwordVisible = !passwordVisible;
+                      },
+                    );
+                  },
+                ),
               ),
             ),
             const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: _login,
               child: const Text('Giriş Yap'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class signupPage extends StatefulWidget {
+  const signupPage({super.key});
+
+  @override
+  signupPageState createState() => signupPageState();
+}
+
+class signupPageState extends State {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFDDF7E3),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'isim',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'soyisim',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'telefon',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'mail',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'sifre',
+              ),
+            ),
+            const SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: null,
+              child: const Text('devam et'),
             ),
           ],
         ),
