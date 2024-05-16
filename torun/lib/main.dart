@@ -3,6 +3,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:camera/camera.dart';
+
+late List<CameraDescription> _cameras;
 
 String username = '';
 String password = '';
@@ -11,7 +14,10 @@ String surname_signup = '';
 String number_signup = '';
 String password_signup = '';
 String mail_signup = '';
-void main() {
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  _cameras = await availableCameras();
   runApp(
     const MaterialApp(
       home: signupPage(),
@@ -199,8 +205,11 @@ class signupPageState extends State {
               ),
             ),
             const SizedBox(height: 20.0),
-            const ElevatedButton(
-              onPressed: null,
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, 
+                MaterialPageRoute(builder: (page) => const CameraApp()));
+              },
               child: Text('devam et'),
             ),
           ],
@@ -209,3 +218,108 @@ class signupPageState extends State {
     );
   }
 }
+
+/// CameraApp is the Main Application.
+class CameraApp extends StatefulWidget {
+  /// Default Constructor
+  const CameraApp({super.key});
+
+  @override
+  State<CameraApp> createState() => _CameraAppState();
+}
+
+class _CameraAppState extends State<CameraApp> {
+  late CameraController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = CameraController(_cameras[0], ResolutionPreset.max);
+    controller.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    }).catchError((Object e) {
+      if (e is CameraException) {
+        switch (e.code) {
+          case 'CameraAccessDenied':
+            // Handle access errors here.
+            break;
+          default:
+            // Handle other errors here.
+            break;
+        }
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!controller.value.isInitialized) {
+      return Container();
+    }
+    return MaterialApp(
+      home: CameraPreview(controller),
+    );
+  }
+}
+
+
+// class cameraPage extends StatefulWidget {
+//   late CameraController controller;
+//   const cameraPage({super.key});
+
+//   @override
+//   cameraPageState createState() => cameraPageState();
+
+
+//   @override
+//   void initState() {
+//     super.initState();
+//     controller = CameraController(_cameras[0], ResolutionPreset.max);
+//     controller.initialize().then((_) {
+//       if (!mounted) {
+//         return;
+//       }
+//       setState(() {});
+//     }).catchError((Object e) {
+//       if (e is CameraException) {
+//         switch (e.code) {
+//           case 'CameraAccessDenied':
+//             // Handle access errors here.
+//             break;
+//           default:
+//             // Handle other errors here.
+//             break;
+//         }
+//       }
+//     });
+//   }
+
+//   @override
+//   void dispose() {
+//     controller.dispose();
+//     super.dispose();
+//   }
+// }
+
+// class cameraPageState extends State {
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: const Color(0xFFDDF7E3),
+//     );
+//   }
+// }
