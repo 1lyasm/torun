@@ -45,7 +45,7 @@ class DocumentScanPageState extends State {
           SizedBox(height: 200),
           Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
           SizedBox(height: 50,),
-          Container(height: 300, width: 360, decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0), color: Colors.grey),),
+          Container(height: 300, width: 375, decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0), color: Colors.grey),),
           Container(
             width: 400,
             height: 130,
@@ -58,7 +58,7 @@ class DocumentScanPageState extends State {
                   foregroundColor: Colors.white, // Set the text color
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
-              child: Text("Devam Et"),
+              child: Text("Devam Et", style: TextStyle(fontSize: 25),),
             ),
           ),
         ]));
