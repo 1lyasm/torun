@@ -44,10 +44,12 @@ class DocumentScanPageState extends State {
           ),
           SizedBox(height: 200),
           Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
-          SizedBox(height: 400),
+          SizedBox(height: 50,),
+          Container(height: 300, width: 360, decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0), color: Colors.grey),),
           Container(
             width: 400,
-            height: 100,
+            height: 130,
+            padding: const EdgeInsets.only(top: 50.0),
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
