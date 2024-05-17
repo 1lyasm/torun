@@ -26,11 +26,11 @@ class DocumentsSentPageState extends State {
             padding: const EdgeInsets.only(left: 33.0, top: 150.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child:
                       Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Padding(
                   padding: const EdgeInsets.only(right: 33.0),
                   child: Image.asset(
@@ -42,20 +42,20 @@ class DocumentsSentPageState extends State {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 300,
           ),
-          Text(
+          const Text(
             "Belgeleriniz",
             style: TextStyle(fontSize: 50),
           ),
-          Text(
+          const Text(
             "Gönderilmiştir",
             style: TextStyle(fontSize: 50),
           ),
-          Container(padding: const EdgeInsets.only(top: 20), child: Text("Sonraki İşlem İçin Kimlik belgenizi", style: TextStyle(fontSize: 25),)),
-          Text("Hazırlayınız", style: TextStyle(fontSize: 25),),
-          SizedBox(height: 150),
+          Container(padding: const EdgeInsets.only(top: 20), child: const Text("Sonraki İşlem İçin Kimlik belgenizi", style: TextStyle(fontSize: 25),)),
+          const Text("Hazırlayınız", style: TextStyle(fontSize: 25),),
+          const SizedBox(height: 150),
           Container(
             width: 400,
             height: 90,
