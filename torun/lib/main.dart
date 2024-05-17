@@ -17,13 +17,14 @@ String surname_signup = '';
 String number_signup = '';
 String password_signup = '';
 String mail_signup = '';
+String kod_erisim = '';
 
 Future<void> main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   // _cameras = await availableCameras();
   runApp(
     const MaterialApp(
-      home: signupPage(),
+      home: verificationPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -64,19 +65,28 @@ class loginPageState extends State {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Hatalı giriş',style: TextStyle(fontSize: 50, color: Colors.red,fontWeight: FontWeight.bold,),),
-                  Icon(Icons.cancel,color: Colors.red,
-                        size: 150.0,),
+                  Text(
+                    'Hatalı giriş',
+                    style: TextStyle(
+                      fontSize: 50,
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Icon(
+                    Icons.cancel,
+                    color: Colors.red,
+                    size: 150.0,
+                  ),
                 ],
               ),
             ),
-            
           );
         },
       );
       Future.delayed(const Duration(seconds: 2), () {
-Navigator.of(context).pop();
-});
+        Navigator.of(context).pop();
+      });
     }
   }
 
@@ -99,7 +109,6 @@ Navigator.of(context).pop();
               ],
             ),
             const SizedBox(height: 50.0),
-            
             TextField(
               onChanged: (value) {
                 setState(() {
@@ -148,19 +157,19 @@ Navigator.of(context).pop();
                 )
               ],
             ),
-           Row(
-             children: [
-               Expanded(
-                    child: SizedBox(
-                      height: 100,
-                      child: ElevatedButton(
-                        onPressed:_login,
-                        child: const Text('Başla'),
-                      ),
+            Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 100,
+                    child: ElevatedButton(
+                      onPressed: _login,
+                      child: const Text('Başla'),
                     ),
                   ),
-             ],
-           ),
+                ),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -293,7 +302,7 @@ class signupPageState extends State {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (page) => const Placeholder()));
+                              builder: (page) => const verificationPage()));
                     },
                     child: const Text('Devam Et'),
                   ),
@@ -315,6 +324,83 @@ class signupPageState extends State {
                               builder: (page) => const loginPage()));
                     },
                     child: const Text('Giriş yap'))
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class verificationPage extends StatefulWidget {
+  const verificationPage({super.key});
+
+  @override
+  verificationPageState createState() => verificationPageState();
+}
+
+class verificationPageState extends State {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFDDF7E3),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    '4 Haneli Kodu Gir',
+                    textAlign: TextAlign.start,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 30),
+            const Text(
+              'Lütfen erişim kodunu gir',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.grey, fontSize: 20),
+            ),
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  kod_erisim = value;
+                });
+              },
+              decoration: const InputDecoration(
+                labelText: 'Kod',
+              ),
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text('Şifre almadım'),
+                TextButton(onPressed: null, child: Text('Yeniden gönder'))
+              ],
+            ),
+            const Row(
+              children: [
+                Expanded(
+                  child: SizedBox(
+                    height: 100,
+                    child: ElevatedButton(
+                      onPressed: null,
+                      child: Text('Erişim'),
+                    ),
+                  ),
+                ),
               ],
             ),
           ],

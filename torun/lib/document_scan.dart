@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,12 +19,12 @@ class DocumentScanPageState extends State {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFDDF7E3),
+    return const Scaffold(
+      backgroundColor: Color(0xFFDDF7E3),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 33.0, top: 150.0),
+            padding: EdgeInsets.only(left: 33.0, top: 150.0),
             child: Row(children: [
               Text("Hesap Doğrulama", style: TextStyle(fontSize: 26))
             ]),
