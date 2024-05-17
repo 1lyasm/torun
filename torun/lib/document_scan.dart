@@ -17,35 +17,48 @@ class DocumentScanPageState extends State {
     super.initState();
   }
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    backgroundColor: const Color(0xFFDDF7E3),
-    body: Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 33.0, top: 150.0),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
-              ),
-              SizedBox(width: 16),
-              Padding(
-                padding: const EdgeInsets.only(right: 33.0), 
-                child: Image.asset(
-                  "assets/trackbar_3.png",
-                  width: MediaQuery.of(context).size.width * 0.3, 
-                  fit: BoxFit.contain, 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: const Color(0xFFDDF7E3),
+        body: Column(children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 33.0, top: 150.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child:
+                      Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
                 ),
-              ),
-            ],
+                SizedBox(width: 16),
+                Padding(
+                  padding: const EdgeInsets.only(right: 33.0),
+                  child: Image.asset(
+                    "assets/trackbar_3.png",
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        SizedBox(height: 200),
-        Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
-      ],
-    ),
-  );
-}
+          SizedBox(height: 200),
+          Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
+          SizedBox(height: 400),
+          Container(
+            width: 400,
+            height: 100,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromRGBO(
+                      167, 201, 87, 1), // Set the background color
+                  foregroundColor: Colors.white, // Set the text color
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20))),
+              child: Text("Devam Et"),
+            ),
+          ),
+        ]));
+  }
 }
