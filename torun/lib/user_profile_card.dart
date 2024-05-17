@@ -1,8 +1,8 @@
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 
 class UserProfileCard extends StatelessWidget {
   final String name;
@@ -11,8 +11,9 @@ class UserProfileCard extends StatelessWidget {
   final double rating;
   final int voteCount;
 
-  UserProfileCard(
-      {required this.name,
+  const UserProfileCard(
+      {super.key,
+      required this.name,
       required this.surname,
       required this.address,
       required this.rating,
@@ -20,60 +21,69 @@ class UserProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      height: 200,
-      width: 425,
-      decoration: BoxDecoration(
-          color: Colors.grey, borderRadius: BorderRadius.circular(20)),
-      child: Card(
-        shape: RoundedRectangleBorder(
-            side: BorderSide(color: Colors.black, width: 1),
-            borderRadius: BorderRadius.circular(20)),
-        color: const Color.fromARGB(255, 195, 184, 184),
-        elevation: 4.0,
-        margin: EdgeInsets.all(30.0),
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                '$name $surname',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 8.0),
-              Row(
+    return Padding(
+      padding: const EdgeInsets.all(50.0),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (page) => const Placeholder()));
+        },
+        child: Container(
+          alignment: Alignment.center,
+          height: 200,
+          width: 425,
+          decoration: BoxDecoration(
+              color: Colors.grey, borderRadius: BorderRadius.circular(20)),
+          child: Card(
+            shape: RoundedRectangleBorder(
+                side: const BorderSide(color: Colors.black, width: 1),
+                borderRadius: BorderRadius.circular(20)),
+            color: const Color.fromARGB(255, 195, 184, 184),
+            elevation: 4.0,
+            margin: const EdgeInsets.all(30.0),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(Icons.location_on_outlined),
-                  SizedBox(width: 4.0),
-                  Text(address),
+                  Text(
+                    '$name $surname',
+                    style: const TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.location_on_outlined),
+                      const SizedBox(width: 4.0),
+                      Text(address),
+                    ],
+                  ),
+                  const SizedBox(height: 8.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(5, (index) {
+                      return Icon(
+                        index < rating ? Icons.star : Icons.star_border,
+                        color: Colors.amber,
+                      );
+                    }),
+                  ),
+                  const SizedBox(height: 4.0),
+                  // Text(
+                  //   '$voteCount',
+                  //   style: TextStyle(
+                  //     fontSize: 18.0,
+                  //     fontWeight: FontWeight.bold,
+                  //   ),
+                  // ),
                 ],
               ),
-              SizedBox(height: 8.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(5, (index) {
-                  return Icon(
-                    index < rating ? Icons.star : Icons.star_border,
-                    color: Colors.amber,
-                  );
-                }),
-              ),
-              SizedBox(height: 4.0),
-              // Text(
-              //   '$voteCount',
-              //   style: TextStyle(
-              //     fontSize: 18.0,
-              //     fontWeight: FontWeight.bold,
-              //   ),
-              // ),
-            ],
+            ),
           ),
         ),
       ),
