@@ -26,11 +26,11 @@ class DocumentScanBackPageState extends State {
             padding: const EdgeInsets.only(left: 33.0, top: 150.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child:
                       Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Padding(
                   padding: const EdgeInsets.only(right: 33.0),
                   child: Image.asset(
@@ -42,9 +42,9 @@ class DocumentScanBackPageState extends State {
               ],
             ),
           ),
-          SizedBox(height: 200),
-          Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
-          SizedBox(height: 50,),
+          const SizedBox(height: 200),
+          const Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
+          const SizedBox(height: 50,),
           Container(height: 300, width: 360, decoration: BoxDecoration(borderRadius: BorderRadius.circular(15.0), color: Colors.grey),),
           Container(
             width: 400,
@@ -53,12 +53,12 @@ class DocumentScanBackPageState extends State {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(
+                  backgroundColor: const Color.fromRGBO(
                       167, 201, 87, 1), // Set the background color
                   foregroundColor: Colors.white, // Set the text color
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
-              child: Text("Devam Et"),
+              child: const Text("Devam Et"),
             ),
           ),
         ]));
