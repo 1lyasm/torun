@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:torun/expanded_user_profile_card.dart';
 import 'package:torun/user_profile_card.dart';
 
 class EmployeeListPage extends StatefulWidget {
@@ -43,12 +44,19 @@ class EmployeeListPageState extends State {
       ),
       body: ListView(
         children: const [
-          UserProfileCard(
+          ExpandedUserProfileCard(
             name: "Elif",
             surname: "Kaya",
             address: "Bağdat Caddesi, Kadıköy, İstanbul",
             rating: 4,
             voteCount: 20,
+            from: "12.00",
+            to: "13.00",
+            workHours: 13,
+            missions: [
+              "Evleri temizle",
+              "Alışveriş yap"
+            ],
           ),
           UserProfileCard(
             name: "Ali",
