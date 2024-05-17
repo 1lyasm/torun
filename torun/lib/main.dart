@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 // import 'package:camera/camera.dart';
 import 'dart:async';
 
+import 'package:torun/employee_list.dart';
 
 // late List<DocumentScanDescription> _cameras;
 
@@ -21,11 +22,11 @@ String mail_signup = '';
 String kod_erisim = '';
 
 Future<void> main() async {
- // WidgetsFlutterBinding.ensureInitialized();
- // _cameras = await availableDocumentScans();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // _cameras = await availableDocumentScans();
   runApp(
     const MaterialApp(
-      home: loginPage(),
+      home: EmployeeListPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
