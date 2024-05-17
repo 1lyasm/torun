@@ -4,8 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 // import 'package:camera/camera.dart';
+import 'document_scan.dart';
 
-// late List<CameraDescription> _cameras;
+// late List<DocumentScanDescription> _cameras;
 
 String username = '';
 String password = '';
@@ -17,10 +18,10 @@ String mail_signup = '';
 
 Future<void> main() async {
  // WidgetsFlutterBinding.ensureInitialized();
- // _cameras = await availableCameras();
+ // _cameras = await availableDocumentScans();
   runApp(
     const MaterialApp(
-      home: signupPage(),
+      home: DocumentScanPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
