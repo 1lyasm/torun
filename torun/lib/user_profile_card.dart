@@ -25,12 +25,12 @@ class UserProfileCard extends StatelessWidget {
       height: 200,
       width: 425,
       decoration: BoxDecoration(
-          color: Color.fromARGB(255, 205, 202, 202), borderRadius: BorderRadius.circular(20)),
+          color: Colors.grey, borderRadius: BorderRadius.circular(20)),
       child: Card(
         shape: RoundedRectangleBorder(
             side: BorderSide(color: Colors.black, width: 1),
             borderRadius: BorderRadius.circular(20)),
-        color: Color.fromARGB(255, 234, 232, 232),
+        color: const Color.fromARGB(255, 195, 184, 184),
         elevation: 4.0,
         margin: EdgeInsets.all(30.0),
         child: Padding(

@@ -40,8 +40,76 @@ class EmployeeListPageState extends State {
           SizedBox(
             height: 100,
           ),
-          UserProfileCard(
-              name: "name", surname: "surname", address: "address", rating: 4, voteCount: 20,)
+              UserProfileCard(
+                name: "Elif",
+                surname: "Kaya",
+                address: "Bağdat Caddesi, Kadıköy, İstanbul",
+                rating: 4.6,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Ali",
+                surname: "Can",
+                address: "İstinye Park AVM, Sarıyer, İstanbul",
+                rating: 4.9,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Fatma",
+                surname: "Yılmaz",
+                address: "Acıbadem Hastanesi, Üsküdar, İstanbul",
+                rating: 4.7,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Mehmet",
+                surname: "Öztürk",
+                address: "Beşiktaş, İstanbul",
+                rating: 4.5,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Zeynep",
+                surname: "Şahin",
+                address: "Taksim Meydanı, Beyoğlu, İstanbul",
+                rating: 4.8,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Emre",
+                surname: "Yıldırım",
+                address: "Bebek Sahili, Beşiktaş, İstanbul",
+                rating: 4.6,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Deniz",
+                surname: "Aksoy",
+                address: "Maçka Parkı, Şişli, İstanbul",
+                rating: 4.7,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Selin",
+                surname: "Güler",
+                address: "Kanyon AVM, Levent, İstanbul",
+                rating: 4.9,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Burak",
+                surname: "Demir",
+                address: "Şişli, İstanbul",
+                rating: 4.5,
+                voteCount: 20,
+              ),
+              UserProfileCard(
+                name: "Elif",
+                surname: "Topçu",
+                address: "Florence Nightingale Hastanesi, Şişli, İstanbul",
+                rating: 4.8,
+                voteCount: 20,
+              )
         ]));
   }
 }
