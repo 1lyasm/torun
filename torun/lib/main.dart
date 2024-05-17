@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 // import 'package:camera/camera.dart';
 import 'dart:async';
 
+
 // late List<DocumentScanDescription> _cameras;
 
 String username = '';
@@ -24,7 +25,7 @@ Future<void> main() async {
  // _cameras = await availableDocumentScans();
   runApp(
     const MaterialApp(
-      home: verificationPage(),
+      home: loginPage(),
       debugShowCheckedModeBanner: false,
     ),
   );

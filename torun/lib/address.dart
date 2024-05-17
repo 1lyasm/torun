@@ -27,7 +27,7 @@ class AddressPageState extends State {
             padding: const EdgeInsets.only(left: 33.0, top: 150.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -35,7 +35,7 @@ class AddressPageState extends State {
                     ],
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Padding(
                   padding: const EdgeInsets.only(right: 33.0),
                   child: Image.asset(
@@ -47,39 +47,39 @@ class AddressPageState extends State {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 200,
           ),
-          Align(
+          const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(
+              padding: EdgeInsets.only(
                   left: 33.0), // Adjust the left padding as needed
               child: Text("Ikametgah", style: TextStyle(fontSize: 26)),
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-                padding: const EdgeInsets.only(left: 33.0, top: 20),
+                padding: EdgeInsets.only(left: 33.0, top: 20),
                 child: Text("Dosyayı Buraya Yükleyiniz",
                     style: TextStyle(fontSize: 18))),
           ),
-          Align(
+          const Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 33.0, top: 80),
+                padding: EdgeInsets.only(left: 33.0, top: 80),
                 child:
                     Text("Adli Sicil Belgesi", style: TextStyle(fontSize: 26)),
               )),
-          Align(
+          const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-                padding: const EdgeInsets.only(left: 33.0, top: 20),
+                padding: EdgeInsets.only(left: 33.0, top: 20),
                 child: Text("Dosyayı Buraya Yükleyiniz",
                     style: TextStyle(fontSize: 18))),
           ),
-          SizedBox(height: 200,),
+          const SizedBox(height: 200,),
           Container(
             width: 400,
             height: 130,
@@ -87,12 +87,12 @@ class AddressPageState extends State {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromRGBO(
+                  backgroundColor: const Color.fromRGBO(
                       167, 201, 87, 1), // Set the background color
                   foregroundColor: Colors.white, // Set the text color
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
-              child: Text("Devam Et", style: TextStyle(fontSize: 25),),
+              child: const Text("Devam Et", style: TextStyle(fontSize: 25),),
             ),
           ),
           ],

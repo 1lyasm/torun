@@ -26,11 +26,11 @@ class AccountCreatedPageState extends State {
             padding: const EdgeInsets.only(left: 33.0, top: 150.0),
             child: Row(
               children: [
-                Expanded(
+                const Expanded(
                   child:
                       Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Padding(
                   padding: const EdgeInsets.only(right: 33.0),
                   child: Image.asset(
@@ -42,20 +42,20 @@ class AccountCreatedPageState extends State {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 300,
           ),
-          Text(
+          const Text(
             "Hesabınız",
             style: TextStyle(fontSize: 50),
           ),
-          Text(
+          const Text(
             "Oluşturuldu",
             style: TextStyle(fontSize: 50),
           ),
           Container(
               padding: const EdgeInsets.only(top: 70),
-              child: Icon(Icons.check_circle, color: Colors.green, size: 100)),
+              child: const Icon(Icons.check_circle, color: Colors.green, size: 100)),
           Container(
             width: 400,
             height: 130,
