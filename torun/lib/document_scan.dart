@@ -58,7 +58,7 @@ class DocumentScanPageState extends State {
                   foregroundColor: Colors.white, // Set the text color
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20))),
-              child: const Text("Devam Et"),
+              child: const Text("Devam Et", style: TextStyle(fontSize: 25),),
             ),
           ),
         ]));
