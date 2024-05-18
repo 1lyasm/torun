@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:torun/account_created.dart';
 import 'package:torun/address.dart';
-// import 'package:camera/camera.dart';
+import 'package:camera/camera.dart';
 import 'dart:async';
 
 import 'package:torun/employee_list.dart';
 
-// late List<DocumentScanDescription> _cameras;
+late List<CameraDescription> _cameras;
 
 String username = '';
 String password = '';
@@ -24,8 +24,8 @@ String mail_signup = '';
 String kod_erisim = '';
 
 Future<void> main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // _cameras = await availableDocumentScans();
+  WidgetsFlutterBinding.ensureInitialized();
+  _cameras = await availableCameras();
   runApp(
     const MaterialApp(
       home: signupPage(),
@@ -168,11 +168,11 @@ class loginPageState extends State {
                     height: 100,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(
-                      167, 201, 87, 1), // Set the background color
-                  foregroundColor: Colors.white, // Set the text color
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
+                          backgroundColor: const Color.fromRGBO(
+                              167, 201, 87, 1), // Set the background color
+                          foregroundColor: Colors.white, // Set the text color
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20))),
                       onPressed: _login,
                       child: const Text('Başla'),
                     ),
@@ -309,11 +309,11 @@ class signupPageState extends State {
                   height: 100,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(
-                      167, 201, 87, 1), // Set the background color
-                  foregroundColor: Colors.white, // Set the text color
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
+                        backgroundColor: const Color.fromRGBO(
+                            167, 201, 87, 1), // Set the background color
+                        foregroundColor: Colors.white, // Set the text color
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20))),
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -406,24 +406,24 @@ class verificationPageState extends State {
                 TextButton(onPressed: null, child: Text('Yeniden gönder'))
               ],
             ),
-             Row(
+            Row(
               children: [
                 Expanded(
                   child: SizedBox(
                     height: 100,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromRGBO(
-                      167, 201, 87, 1), // Set the background color
-                  foregroundColor: Colors.white, // Set the text color
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
+                          backgroundColor: const Color.fromRGBO(
+                              167, 201, 87, 1), // Set the background color
+                          foregroundColor: Colors.white, // Set the text color
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20))),
                       onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (page) => const AddressPage()));
-                    },
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (page) => const AddressPage()));
+                      },
                       child: const Text('Erişim'),
                     ),
                   ),
@@ -433,6 +433,233 @@ class verificationPageState extends State {
           ],
         ),
       ),
+    );
+  }
+}
+
+class DocumentScanPage extends StatefulWidget {
+  const DocumentScanPage({super.key});
+
+  @override
+  DocumentScanPageState createState() => DocumentScanPageState();
+}
+
+class DocumentScanPageState extends State {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 33.0, top: 150.0),
+            child: Row(
+              children: [
+                const Expanded(
+                  child:
+                      Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
+                ),
+                const SizedBox(width: 16),
+                Padding(
+                  padding: const EdgeInsets.only(right: 33.0),
+                  child: Image.asset(
+                    "assets/trackbar_3.png",
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 200),
+          const Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
+          const SizedBox(
+            height: 50,
+          ),
+          Container(
+              height: 300,
+              width: 360,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.grey),
+              child: Stack(children: [
+                CameraApp(),
+                Container(
+                  padding: EdgeInsets.only(top: 30),
+                  alignment: Alignment.topCenter,
+                  child: Text(
+                    "Ön Yüzünü Çeviriniz",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                )
+              ])),
+          Container(
+            width: 400,
+            height: 130,
+            padding: const EdgeInsets.only(top: 50.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (page) => const DocumentScanBackPage()));
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      167, 201, 87, 1), // Set the background color
+                  foregroundColor: Colors.white, // Set the text color
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20))),
+              child: const Text(
+                "Devam Et",
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+          ),
+        ]));
+  }
+}
+
+class DocumentScanBackPage extends StatefulWidget {
+  const DocumentScanBackPage({super.key});
+
+  @override
+  DocumentScanBackPageState createState() => DocumentScanBackPageState();
+}
+
+class DocumentScanBackPageState extends State {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 33.0, top: 150.0),
+            child: Row(
+              children: [
+                const Expanded(
+                  child:
+                      Text("Hesap Doğrulama", style: TextStyle(fontSize: 26)),
+                ),
+                const SizedBox(width: 16),
+                Padding(
+                  padding: const EdgeInsets.only(right: 33.0),
+                  child: Image.asset(
+                    "assets/trackbar_3.png",
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 200),
+          const Text("Kimlik Belgesi Taratma", style: TextStyle(fontSize: 26)),
+          const SizedBox(
+            height: 50,
+          ),
+          Container(
+              height: 300,
+              width: 360,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                  color: Colors.grey),
+              child: Stack(children: [
+                CameraApp(),
+                Container(
+                  padding: EdgeInsets.only(top: 30),
+                  alignment: Alignment.topCenter,
+                  child: Text(
+                    "Arka Yüzünü Çeviriniz",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                )
+              ])),
+          Container(
+            width: 400,
+            height: 130,
+            padding: const EdgeInsets.only(top: 50.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (page) => const AccountCreatedPage()));
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      167, 201, 87, 1), // Set the background color
+                  foregroundColor: Colors.white, // Set the text color
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20))),
+              child: const Text(
+                "Devam Et",
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+          ),
+        ]));
+  }
+}
+
+/// CameraApp is the Main Application.
+class CameraApp extends StatefulWidget {
+  /// Default Constructor
+  const CameraApp({super.key});
+
+  @override
+  State<CameraApp> createState() => _CameraAppState();
+}
+
+class _CameraAppState extends State<CameraApp> {
+  late CameraController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = CameraController(_cameras[0], ResolutionPreset.max);
+    controller.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    }).catchError((Object e) {
+      if (e is CameraException) {
+        switch (e.code) {
+          case 'CameraAccessDenied':
+            // Handle access errors here.
+            break;
+          default:
+            // Handle other errors here.
+            break;
+        }
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!controller.value.isInitialized) {
+      return Container();
+    }
+    return MaterialApp(
+      home: CameraPreview(controller),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:torun/document_scan.dart';
+import 'package:torun/main.dart';
 
 class DocumentsSentPage extends StatefulWidget {
   const DocumentsSentPage({super.key});
