@@ -366,71 +366,77 @@ class verificationPageState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    '4 Haneli Kodu Gir',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 30),
-            const Text(
-              'Lütfen erişim kodunu gir',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey, fontSize: 20),
-            ),
-            TextField(
-              onChanged: (value) {
-                setState(() {
-                  kod_erisim = value;
-                });
-              },
-              decoration: const InputDecoration(
-                labelText: 'Kod',
-              ),
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('Şifre almadım'),
-                TextButton(onPressed: null, child: Text('Yeniden gönder'))
-              ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 100,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromRGBO(
-                              167, 201, 87, 1), // Set the background color
-                          foregroundColor: Colors.white, // Set the text color
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20))),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (page) => const AddressPage()));
-                      },
-                      child: const Text('Erişim'),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 50, right: 50),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      '4 Haneli Kodu Gir',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                   ),
+                ],
+              ),
+              const SizedBox(height: 30),
+              const Text(
+                'Lütfen erişim kodunu gir',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey, fontSize: 20),
+              ),
+              const SizedBox(height: 30),
+              TextField(
+                onChanged: (value) {
+                  setState(() {
+                    kod_erisim = value;
+                  });
+                },
+                decoration: const InputDecoration(
+                  labelText: 'Kod',
                 ),
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(height: 30),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Şifre almadım'),
+                  TextButton(onPressed: null, child: Text('Yeniden gönder'))
+                ],
+              ),
+              const SizedBox(height: 30,),
+              Row(
+                children: [
+                  Expanded(
+                    child: SizedBox(
+                      height: 100,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color.fromRGBO(
+                                167, 201, 87, 1), // Set the background color
+                            foregroundColor: Colors.white, // Set the text color
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20))),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (page) => const AddressPage()));
+                        },
+                        child: const Text('Erişim'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
