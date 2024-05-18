@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:torun/documents_sent.dart';
 
 class AddressPage extends StatefulWidget {
   const AddressPage({super.key});
@@ -20,7 +21,7 @@ class AddressPageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDDF7E3),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
@@ -85,7 +86,12 @@ class AddressPageState extends State {
             height: 130,
             padding: const EdgeInsets.only(top: 50.0),
             child: ElevatedButton(
-              onPressed: () {},
+             onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (page) => const DocumentsSentPage()));
+                    },
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(
                       167, 201, 87, 1), // Set the background color

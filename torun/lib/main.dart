@@ -1,10 +1,12 @@
-// ignore_for_file: camel_case_types, unnecessary_breaks, library_private_types_in_public_api, use_build_context_synchronously, dead_code, non_constant_identifier_names
+// ignore_for_file: camel_case_types, unnecessary_breaks, library_private_types_in_public_api, use_build_context_synchronously, dead_code, non_constant_identifier_names, unused_import
 
 // ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
+import 'package:torun/account_created.dart';
+import 'package:torun/address.dart';
 // import 'package:camera/camera.dart';
 import 'dart:async';
 
@@ -26,7 +28,7 @@ Future<void> main() async {
   // _cameras = await availableDocumentScans();
   runApp(
     const MaterialApp(
-      home: EmployeeListPage(),
+      home: signupPage(),
       debugShowCheckedModeBanner: false,
     ),
   );
@@ -50,11 +52,11 @@ class loginPageState extends State {
 
   // Fonksiyon: Kullanıcıyı giriş yapmaya yönlendirir
   void _login() {
-    if (username == '25297638553' && password == 'queue38') {
+    if (username == '123' && password == '123') {
       // Kullanıcı adı ve şifre doğruysa, müşteri ekranına yönlendir
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (page) => const Placeholder()),
+        MaterialPageRoute(builder: (page) => const EmployeeListPage()),
       );
     } else {
       // Kullanıcı adı veya şifre yanlışsa hata göster
@@ -95,7 +97,7 @@ class loginPageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDDF7E3),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -165,6 +167,12 @@ class loginPageState extends State {
                   child: SizedBox(
                     height: 100,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      167, 201, 87, 1), // Set the background color
+                  foregroundColor: Colors.white, // Set the text color
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20))),
                       onPressed: _login,
                       child: const Text('Başla'),
                     ),
@@ -210,7 +218,7 @@ class signupPageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDDF7E3),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -300,6 +308,12 @@ class signupPageState extends State {
                 child: SizedBox(
                   height: 100,
                   child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      167, 201, 87, 1), // Set the background color
+                  foregroundColor: Colors.white, // Set the text color
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20))),
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -351,7 +365,7 @@ class verificationPageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFDDF7E3),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -392,14 +406,25 @@ class verificationPageState extends State {
                 TextButton(onPressed: null, child: Text('Yeniden gönder'))
               ],
             ),
-            const Row(
+             Row(
               children: [
                 Expanded(
                   child: SizedBox(
                     height: 100,
                     child: ElevatedButton(
-                      onPressed: null,
-                      child: Text('Erişim'),
+                      style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(
+                      167, 201, 87, 1), // Set the background color
+                  foregroundColor: Colors.white, // Set the text color
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20))),
+                      onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (page) => const AddressPage()));
+                    },
+                      child: const Text('Erişim'),
                     ),
                   ),
                 ),

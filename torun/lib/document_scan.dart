@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:torun/document_scan_back.dart';
 
 class DocumentScanPage extends StatefulWidget {
   const DocumentScanPage({super.key});
@@ -20,7 +21,7 @@ class DocumentScanPageState extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFDDF7E3),
+        backgroundColor: Colors.white,
         body: Column(children: [
           Padding(
             padding: const EdgeInsets.only(left: 33.0, top: 150.0),
@@ -51,7 +52,12 @@ class DocumentScanPageState extends State {
             height: 130,
             padding: const EdgeInsets.only(top: 50.0),
             child: ElevatedButton(
-              onPressed: () {},
+               onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (page) => const DocumentScanBackPage()));
+                    },
               style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromRGBO(
                       167, 201, 87, 1), // Set the background color

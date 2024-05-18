@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:torun/expanded_user_profile_card.dart';
+import 'package:torun/settings.dart';
 import 'package:torun/user_profile_card.dart';
 
 class EmployeeListPage extends StatefulWidget {
@@ -37,7 +38,7 @@ class EmployeeListPageState extends State {
             ),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (page) => const Placeholder()));
+                  MaterialPageRoute(builder: (page) => const SettingsPage()));
             },
           ),
         ],
@@ -47,7 +48,7 @@ class EmployeeListPageState extends State {
           ExpandedUserProfileCard(
             name: "Elif",
             surname: "Kaya",
-            address: "Bağdat Caddesi, Kadıköy, İstanbul",
+            address: "Bağdat Caddesi, Kadıköy",
             rating: 4,
             voteCount: 20,
             from: "09:00",
@@ -60,7 +61,7 @@ class EmployeeListPageState extends State {
           ExpandedUserProfileCard(
             name: "Ali",
             surname: "Can",
-            address: "İstinye Park AVM, Sarıyer, İstanbul",
+            address: "İstinye Park, Sarıyer",
             rating: 5,
             voteCount: 20,
             from: "11.00",
@@ -73,7 +74,7 @@ class EmployeeListPageState extends State {
           ExpandedUserProfileCard(
             name: "Fatma",
             surname: "Yılmaz",
-            address: "Acıbadem Hastanesi, Üsküdar, İstanbul",
+            address: "Acıbadem, Üsküdar",
             rating: 5,
             voteCount: 20,
             from: "12.00",
@@ -86,7 +87,7 @@ class EmployeeListPageState extends State {
           ExpandedUserProfileCard(
             name: "Mehmet",
             surname: "Öztürk",
-            address: "Beşiktaş, İstanbul",
+            address: "Beşiktaş",
             rating: 4,
             voteCount: 20,
             from: "13.00",
@@ -99,7 +100,7 @@ class EmployeeListPageState extends State {
           ExpandedUserProfileCard(
             name: "Zeynep",
             surname: "Şahin",
-            address: "Taksim Meydanı, Beyoğlu, İstanbul",
+            address: "Taksim Meydanı, Beyoğlu",
             rating: 4,
             voteCount: 20,
             from: "08.00",
