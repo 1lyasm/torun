@@ -38,7 +38,7 @@ class _ExpandedUserProfileCardState extends State<ExpandedUserProfileCard> {
     return Card(
       child: ExpansionTile(
         controlAffinity: ListTileControlAffinity.platform,
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey.shade400,
         title: Padding(
           padding: const EdgeInsets.all(50.0),
           child: Container(
@@ -46,12 +46,12 @@ class _ExpandedUserProfileCardState extends State<ExpandedUserProfileCard> {
             height: 200,
             width: 425,
             decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(20)),
+                color: Colors.grey.shade400, borderRadius: BorderRadius.circular(20)),
             child: Card(
               shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: Colors.black, width: 1),
+                  side: const BorderSide(color: Color.fromARGB(255, 163, 162, 162), width: 1),
                   borderRadius: BorderRadius.circular(20)),
-              color: const Color.fromARGB(255, 195, 184, 184),
+              color: Colors.grey.shade300,
               elevation: 4.0,
               margin: const EdgeInsets.all(30.0),
               child: Padding(
@@ -110,12 +110,12 @@ class _ExpandedUserProfileCardState extends State<ExpandedUserProfileCard> {
               height: 400,
               width: 425,
               decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(20)),
+                  color: Colors.grey.shade400, borderRadius: BorderRadius.circular(20)),
               child: Card(
                 shape: RoundedRectangleBorder(
                     side: const BorderSide(color: Colors.black, width: 1),
                     borderRadius: BorderRadius.circular(20)),
-                color: const Color.fromARGB(255, 195, 184, 184),
+                color: Colors.grey.shade300,
                 elevation: 4.0,
                 margin: const EdgeInsets.all(30.0),
                 child: Padding(

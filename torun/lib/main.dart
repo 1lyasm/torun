@@ -330,7 +330,7 @@ class signupPageState extends State {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Hesabın varmı?'),
+                const Text('Hesabın var mı?'),
                 const SizedBox(width: 50.0),
                 TextButton(
                     onPressed: () {
