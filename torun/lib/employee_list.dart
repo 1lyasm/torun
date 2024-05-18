@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_import
+// ignore_for_file: unnecessary_import, unused_import
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,83 +43,71 @@ class EmployeeListPageState extends State {
         ],
       ),
       body: ListView(
-        children: const [
+        children:  const [
           ExpandedUserProfileCard(
             name: "Elif",
             surname: "Kaya",
             address: "Bağdat Caddesi, Kadıköy, İstanbul",
             rating: 4,
             voteCount: 20,
-            from: "12.00",
-            to: "13.00",
-            workHours: 13,
+            from: "09:00",
+            to: "17:00",
+            workHours: 8,
             missions: [
-              "Evleri temizle",
-              "Alışveriş yap"
+              "Spor"
             ],
           ),
-          UserProfileCard(
+          ExpandedUserProfileCard(
             name: "Ali",
             surname: "Can",
             address: "İstinye Park AVM, Sarıyer, İstanbul",
             rating: 5,
             voteCount: 20,
+            from: "11.00",
+            to: "15.00",
+            workHours: 4,
+            missions: [
+              "Alışveriş"
+            ],
           ),
-          UserProfileCard(
+          ExpandedUserProfileCard(
             name: "Fatma",
             surname: "Yılmaz",
             address: "Acıbadem Hastanesi, Üsküdar, İstanbul",
             rating: 5,
             voteCount: 20,
+            from: "12.00",
+            to: "13.00",
+            workHours: 1,
+            missions: [
+              "Randevu"
+            ],
           ),
-          UserProfileCard(
+          ExpandedUserProfileCard(
             name: "Mehmet",
             surname: "Öztürk",
             address: "Beşiktaş, İstanbul",
             rating: 4,
             voteCount: 20,
+            from: "13.00",
+            to: "19.00",
+            workHours: 6,
+            missions: [
+              "Ev işleri"
+            ],
           ),
-          UserProfileCard(
+          ExpandedUserProfileCard(
             name: "Zeynep",
             surname: "Şahin",
             address: "Taksim Meydanı, Beyoğlu, İstanbul",
             rating: 4,
             voteCount: 20,
-          ),
-          UserProfileCard(
-            name: "Emre",
-            surname: "Yıldırım",
-            address: "Bebek Sahili, Beşiktaş, İstanbul",
-            rating: 5,
-            voteCount: 20,
-          ),
-          UserProfileCard(
-            name: "Deniz",
-            surname: "Aksoy",
-            address: "Maçka Parkı, Şişli, İstanbul",
-            rating: 3,
-            voteCount: 20,
-          ),
-          UserProfileCard(
-            name: "Selin",
-            surname: "Güler",
-            address: "Kanyon AVM, Levent, İstanbul",
-            rating: 4.9,
-            voteCount: 20,
-          ),
-          UserProfileCard(
-            name: "Burak",
-            surname: "Demir",
-            address: "Şişli, İstanbul",
-            rating: 4,
-            voteCount: 20,
-          ),
-          UserProfileCard(
-            name: "Elif",
-            surname: "Topçu",
-            address: "Florence Nightingale Hastanesi, Şişli, İstanbul",
-            rating: 3,
-            voteCount: 20,
+            from: "08.00",
+            to: "13.00",
+            workHours: 5,
+            missions: [
+              "Ulaşım"
+            ],
           ),
         ],
       ),

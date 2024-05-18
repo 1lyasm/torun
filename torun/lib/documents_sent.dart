@@ -56,7 +56,7 @@ class DocumentsSentPageState extends State {
           Container(padding: const EdgeInsets.only(top: 20), child: const Text("Sonraki İşlem İçin Kimlik belgenizi", style: TextStyle(fontSize: 25),)),
           const Text("Hazırlayınız", style: TextStyle(fontSize: 25),),
           const SizedBox(height: 150),
-          Container(
+          SizedBox(
             width: 400,
             height: 90,
             child: ElevatedButton(

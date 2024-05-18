@@ -23,10 +23,10 @@ class SettingsPageState extends State {
       backgroundColor: const Color(0xFFDDF7E3),
       body: Column(
         children: [
-          SizedBox(height: 50),
+          const SizedBox(height: 50),
           Row(
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 50,
               ),
               IconButton(
@@ -43,25 +43,25 @@ class SettingsPageState extends State {
             size: 220,
             color: Colors.grey.withOpacity(0.5),
           ),
-          SizedBox(height: 80),
-          Text(
+          const SizedBox(height: 80),
+          const Text(
             "Simanur Hattapoğlu",
             style:
                 TextStyle(fontSize: 45, color: Color.fromRGBO(8, 102, 52, 1)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Container(
+          const SizedBox(
               width: 350,
               child: Divider(
                 color: Color.fromRGBO(167, 201, 87, 1),
                 thickness: 12,
               )),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          SizedBox(
+          const SizedBox(
             width: 200,
             height: 100,
             child: Column(children: [
@@ -71,9 +71,9 @@ class SettingsPageState extends State {
               Row(children: [Text("Adres", style: TextStyle(fontSize: 20),)]),
             ]),
           ),
-          Text("Geçmiş Işlerim"),
-          Text("Privacy Policy"),
-          Text("Hakkımızda")
+          const Text("Geçmiş Işlerim"),
+          const Text("Privacy Policy"),
+          const Text("Hakkımızda")
         ],
       ),
     );

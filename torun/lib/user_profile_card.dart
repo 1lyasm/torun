@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class UserProfileCard extends StatelessWidget {
+class UserProfileCard extends StatefulWidget {
   final String name;
   final String surname;
   final String address;
@@ -20,7 +20,12 @@ class UserProfileCard extends StatelessWidget {
       required this.voteCount});
 
   @override
-  Widget build(BuildContext context) {
+  State<UserProfileCard> createState() => _UserProfileCardState();
+}
+
+class _UserProfileCardState extends State<UserProfileCard> {
+  @override
+  Widget build(BuildContext context) {  
     return Padding(
       padding: const EdgeInsets.all(50.0),
       child: GestureDetector(
@@ -48,7 +53,7 @@ class UserProfileCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    '$name $surname',
+                    '${widget.name} ${widget.surname}',
                     style: const TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
@@ -60,7 +65,7 @@ class UserProfileCard extends StatelessWidget {
                     children: [
                       const Icon(Icons.location_on_outlined),
                       const SizedBox(width: 4.0),
-                      Text(address),
+                      Text(widget.address),
                     ],
                   ),
                   const SizedBox(height: 8.0),
@@ -68,7 +73,7 @@ class UserProfileCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(5, (index) {
                       return Icon(
-                        index < rating ? Icons.star : Icons.star_border,
+                        index < widget.rating ? Icons.star : Icons.star_border,
                         color: Colors.amber,
                       );
                     }),
